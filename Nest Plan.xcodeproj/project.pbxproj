@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		86C9C5262EB3651B00655E42 /* Egg Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86C9C5262EB3651B00655E42 /* Nest Plan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nest Plan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		86C9C5272EB3651B00655E42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86C9C5262EB3651B00655E42 /* Egg Planner.app */,
+				86C9C5262EB3651B00655E42 /* Nest Plan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86C9C5252EB3651B00655E42 /* Egg Planner */ = {
+		86C9C5252EB3651B00655E42 /* Nest Plan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86C9C5342EB3651C00655E42 /* Build configuration list for PBXNativeTarget "Egg Planner" */;
+			buildConfigurationList = 86C9C5342EB3651C00655E42 /* Build configuration list for PBXNativeTarget "Nest Plan" */;
 			buildPhases = (
 				86C9C5222EB3651B00655E42 /* Sources */,
 				86C9C5232EB3651B00655E42 /* Frameworks */,
@@ -63,11 +63,11 @@
 			fileSystemSynchronizedGroups = (
 				86C9C5282EB3651B00655E42 /* Egg Planner */,
 			);
-			name = "Egg Planner";
+			name = "Nest Plan";
 			packageProductDependencies = (
 			);
 			productName = "Egg Planner";
-			productReference = 86C9C5262EB3651B00655E42 /* Egg Planner.app */;
+			productReference = 86C9C5262EB3651B00655E42 /* Nest Plan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86C9C5212EB3651B00655E42 /* Build configuration list for PBXProject "Egg Planner" */;
+			buildConfigurationList = 86C9C5212EB3651B00655E42 /* Build configuration list for PBXProject "Nest Plan" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86C9C5252EB3651B00655E42 /* Egg Planner */,
+				86C9C5252EB3651B00655E42 /* Nest Plan */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +254,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Egg Planner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Nest Plan";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -264,7 +265,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Egg-Planner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.eggplanneridenteggs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -286,6 +287,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Egg Planner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Nest Plan";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -296,7 +298,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Egg-Planner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.eggplanneridenteggs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -311,7 +313,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86C9C5212EB3651B00655E42 /* Build configuration list for PBXProject "Egg Planner" */ = {
+		86C9C5212EB3651B00655E42 /* Build configuration list for PBXProject "Nest Plan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86C9C5322EB3651C00655E42 /* Debug */,
@@ -320,7 +322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86C9C5342EB3651C00655E42 /* Build configuration list for PBXNativeTarget "Egg Planner" */ = {
+		86C9C5342EB3651C00655E42 /* Build configuration list for PBXNativeTarget "Nest Plan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86C9C5352EB3651C00655E42 /* Debug */,

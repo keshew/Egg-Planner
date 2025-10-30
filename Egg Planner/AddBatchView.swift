@@ -88,7 +88,6 @@ struct AddBatchView: View {
         currentBatches.append(newBatch)
         StorageManager.shared.saveBatches(currentBatches)
         
-        // Анимация появления яйца
         withAnimation {
             animateEgg = true
         }

@@ -144,7 +144,6 @@ class AnalyticsViewModel: ObservableObject {
     }
 
     private func generateDailyData() -> [Double] {
-        // Возвращает массив сбора яиц по последним 30 дням
         var dict = [Date: Int]()
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
