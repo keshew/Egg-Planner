@@ -19,9 +19,9 @@ struct SettingsView: View {
                         .padding(.horizontal)
                         .onChange(of: notifyCollectEggs) { enabled in
                             if enabled {
-                                scheduleCollectReminder()
+//                                scheduleCollectReminder()
                             } else {
-                                removeCollectReminder()
+//                                removeCollectReminder()
                             }
                         }
                     
@@ -29,9 +29,9 @@ struct SettingsView: View {
                         .padding(.horizontal)
                         .onChange(of: notifyCheckShelfLife) { enabled in
                             if enabled {
-                                scheduleShelfLifeReminder()
+//                                scheduleShelfLifeReminder()
                             } else {
-                                removeShelfLifeReminder()
+//                                removeShelfLifeReminder()
                             }
                         }
                 }
@@ -42,49 +42,49 @@ struct SettingsView: View {
         }
         .navigationTitle("Settings")
         .onAppear {
-            requestNotificationAuthorization()
+//            requestNotificationAuthorization()
         }
     }
-    
-    private func requestNotificationAuthorization() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
-    }
-    
-    private func scheduleCollectReminder() {
-        let content = UNMutableNotificationContent()
-        content.title = "Collect Eggs"
-        content.body = "It's time to collect your eggs today!"
-        content.sound = .default
-        
-        var dateComponents = DateComponents()
-        dateComponents.hour = 9
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: "collectEggsReminder", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request)
-    }
-    
-    private func removeCollectReminder() {
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["collectEggsReminder"])
-    }
-    
-    private func scheduleShelfLifeReminder() {
-        let content = UNMutableNotificationContent()
-        content.title = "Check Egg Shelf Life"
-        content.body = "Check if any egg batches are close to expiring."
-        content.sound = .default
-        
-        var dateComponents = DateComponents()
-        dateComponents.hour = 18
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: "checkShelfLifeReminder", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request)
-    }
-    
-    private func removeShelfLifeReminder() {
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["checkShelfLifeReminder"])
-    }
+//    
+//    private func requestNotificationAuthorization() {
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
+//    }
+//    
+//    private func scheduleCollectReminder() {
+//        let content = UNMutableNotificationContent()
+//        content.title = "Collect Eggs"
+//        content.body = "It's time to collect your eggs today!"
+//        content.sound = .default
+//        
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 9
+//        
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+//        
+//        let request = UNNotificationRequest(identifier: "collectEggsReminder", content: content, trigger: trigger)
+//        UNUserNotificationCenter.current().add(request)
+//    }
+//    
+//    private func removeCollectReminder() {
+//        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["collectEggsReminder"])
+//    }
+//    
+//    private func scheduleShelfLifeReminder() {
+//        let content = UNMutableNotificationContent()
+//        content.title = "Check Egg Shelf Life"
+//        content.body = "Check if any egg batches are close to expiring."
+//        content.sound = .default
+//        
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 18
+//        
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+//        
+//        let request = UNNotificationRequest(identifier: "checkShelfLifeReminder", content: content, trigger: trigger)
+//        UNUserNotificationCenter.current().add(request)
+//    }
+//    
+//    private func removeShelfLifeReminder() {
+//        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["checkShelfLifeReminder"])
+//    }
 }

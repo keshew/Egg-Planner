@@ -6,14 +6,67 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		86E2030A2EB8CD4D00534D82 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 86E203092EB8CD4D00534D82 /* FirebaseCore */; };
+		86E2030C2EB8CD4D00534D82 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 86E2030B2EB8CD4D00534D82 /* FirebaseMessaging */; };
+		86E2030F2EB8CDBC00534D82 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 86E2030E2EB8CDBC00534D82 /* AppsFlyerLib */; };
+		86E2035B2EB8D6C100534D82 /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 86E203542EB8D6C100534D82 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		86E203632EB8D6DB00534D82 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 86E203622EB8D6DB00534D82 /* FirebaseMessaging */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86E203592EB8D6C100534D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86C9C51E2EB3651B00655E42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86E203532EB8D6C100534D82;
+			remoteInfo = NotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		86E203602EB8D6C100534D82 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				86E2035B2EB8D6C100534D82 /* NotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		86C9C5262EB3651B00655E42 /* Nest Plan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nest Plan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86E2034A2EB8D16A00534D82 /* Nest-Plan-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Nest-Plan-Info.plist"; sourceTree = "<group>"; };
+		86E2034D2EB8D25C00534D82 /* Nest Plan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nest Plan.entitlements"; sourceTree = "<group>"; };
+		86E203542EB8D6C100534D82 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		86E2035C2EB8D6C100534D82 /* Exceptions for "NotificationService" folder in "NotificationService" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 86E203532EB8D6C100534D82 /* NotificationService */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		86C9C5282EB3651B00655E42 /* Egg Planner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Egg Planner";
+			sourceTree = "<group>";
+		};
+		86E203552EB8D6C100534D82 /* NotificationService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				86E2035C2EB8D6C100534D82 /* Exceptions for "NotificationService" folder in "NotificationService" target */,
+			);
+			path = NotificationService;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +76,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E2030C2EB8CD4D00534D82 /* FirebaseMessaging in Frameworks */,
+				86E2030A2EB8CD4D00534D82 /* FirebaseCore in Frameworks */,
+				86E2030F2EB8CDBC00534D82 /* AppsFlyerLib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86E203512EB8D6C100534D82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86E203632EB8D6DB00534D82 /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +96,11 @@
 		86C9C51D2EB3651B00655E42 = {
 			isa = PBXGroup;
 			children = (
+				86E2034D2EB8D25C00534D82 /* Nest Plan.entitlements */,
+				86E2034A2EB8D16A00534D82 /* Nest-Plan-Info.plist */,
 				86C9C5282EB3651B00655E42 /* Egg Planner */,
+				86E203552EB8D6C100534D82 /* NotificationService */,
+				86E203612EB8D6DB00534D82 /* Frameworks */,
 				86C9C5272EB3651B00655E42 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +109,16 @@
 			isa = PBXGroup;
 			children = (
 				86C9C5262EB3651B00655E42 /* Nest Plan.app */,
+				86E203542EB8D6C100534D82 /* NotificationService.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		86E203612EB8D6DB00534D82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,20 +131,48 @@
 				86C9C5222EB3651B00655E42 /* Sources */,
 				86C9C5232EB3651B00655E42 /* Frameworks */,
 				86C9C5242EB3651B00655E42 /* Resources */,
+				86E203602EB8D6C100534D82 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				86E2035A2EB8D6C100534D82 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				86C9C5282EB3651B00655E42 /* Egg Planner */,
 			);
 			name = "Nest Plan";
 			packageProductDependencies = (
+				86E203092EB8CD4D00534D82 /* FirebaseCore */,
+				86E2030B2EB8CD4D00534D82 /* FirebaseMessaging */,
+				86E2030E2EB8CDBC00534D82 /* AppsFlyerLib */,
 			);
 			productName = "Egg Planner";
 			productReference = 86C9C5262EB3651B00655E42 /* Nest Plan.app */;
 			productType = "com.apple.product-type.application";
+		};
+		86E203532EB8D6C100534D82 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86E2035D2EB8D6C100534D82 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				86E203502EB8D6C100534D82 /* Sources */,
+				86E203512EB8D6C100534D82 /* Frameworks */,
+				86E203522EB8D6C100534D82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				86E203552EB8D6C100534D82 /* NotificationService */,
+			);
+			name = NotificationService;
+			packageProductDependencies = (
+				86E203622EB8D6DB00534D82 /* FirebaseMessaging */,
+			);
+			productName = NotificationService;
+			productReference = 86E203542EB8D6C100534D82 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +187,9 @@
 					86C9C5252EB3651B00655E42 = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					86E203532EB8D6C100534D82 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = 86C9C5212EB3651B00655E42 /* Build configuration list for PBXProject "Nest Plan" */;
@@ -94,18 +201,30 @@
 			);
 			mainGroup = 86C9C51D2EB3651B00655E42;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				86E203082EB8CD4D00534D82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				86E2030D2EB8CDBC00534D82 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 86C9C5272EB3651B00655E42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				86C9C5252EB3651B00655E42 /* Nest Plan */,
+				86E203532EB8D6C100534D82 /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		86C9C5242EB3651B00655E42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86E203522EB8D6C100534D82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +241,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		86E203502EB8D6C100534D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86E2035A2EB8D6C100534D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86E203532EB8D6C100534D82 /* NotificationService */;
+			targetProxy = 86E203592EB8D6C100534D82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		86C9C5322EB3651C00655E42 /* Debug */ = {
@@ -249,12 +383,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Nest Plan.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Egg Planner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nest-Plan-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Nest Plan";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera to take photos and record videos.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to the microphone to record audio.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We collect usage data to enhance app performance, improve features, and provide a better user experience. Your information remains secure and is not shared with third parties for advertising purposes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -264,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.eggplanneridenteggs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -282,12 +421,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Nest Plan.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Egg Planner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nest-Plan-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Nest Plan";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera to take photos and record videos.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to the microphone to record audio.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We collect usage data to enhance app performance, improve features, and provide a better user experience. Your information remains secure and is not shared with third parties for advertising purposes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,13 +441,63 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.eggplanneridenteggs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		86E2035E2EB8D6C100534D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.eggplanneridenteggs.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86E2035F2EB8D6C100534D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.eggplanneridenteggs.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -331,7 +525,58 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		86E2035D2EB8D6C100534D82 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86E2035E2EB8D6C100534D82 /* Debug */,
+				86E2035F2EB8D6C100534D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		86E203082EB8CD4D00534D82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.5.0;
+			};
+		};
+		86E2030D2EB8CDBC00534D82 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.17.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86E203092EB8CD4D00534D82 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86E203082EB8CD4D00534D82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		86E2030B2EB8CD4D00534D82 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86E203082EB8CD4D00534D82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		86E2030E2EB8CDBC00534D82 /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86E2030D2EB8CDBC00534D82 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+		86E203622EB8D6DB00534D82 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86E203082EB8CD4D00534D82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 86C9C51E2EB3651B00655E42 /* Project object */;
 }
