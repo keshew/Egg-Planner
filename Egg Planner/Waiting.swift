@@ -280,7 +280,9 @@ extension LoadingView {
         if let deepLinkValue = UserDefaults.standard.string(forKey: "deep_link_value") {
             conversionData["deep_link_value"] = deepLinkValue
         }
-
+        if let deepLinkSub1 = UserDefaults.standard.string(forKey: "deep_link_sub1") {
+            conversionData["deep_link_sub1"] = deepLinkSub1
+        }
         
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: conversionData, options: [])

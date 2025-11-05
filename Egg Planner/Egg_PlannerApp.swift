@@ -17,7 +17,7 @@ struct Egg_PlannerApp: App {
     }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate, AppsFlyerLibDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate, AppsFlyerLibDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, DeepLinkDelegate {
     private var didRequestConversionDataAgain = false
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -64,6 +64,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, AppsFlyerLibDelegate, Messag
         AppsFlyerLib.shared().appleAppID = "6754699349"
         AppsFlyerLib.shared().appsFlyerDevKey = "hY6kJejoXdbu9LMAPjGFk5"
         AppsFlyerLib.shared().delegate = self
+        AppsFlyerLib.shared().deepLinkDelegate = self
         AppsFlyerLib.shared().isDebug = false
         AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
         NotificationCenter.default.addObserver(self, selector: #selector(dnsajkdnasda),
@@ -155,6 +156,36 @@ class AppDelegate: NSObject, UIApplicationDelegate, AppsFlyerLibDelegate, Messag
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .datraRecieved, object: nil)
+    }
+    
+    func didResolveDeepLink(_ result: DeepLinkResult) {
+        switch result.status {
+        case .found:
+            if let deepLink = result.deepLink {
+                let deepLinkValue = deepLink.deeplinkValue
+                let deepLinkSub1 = deepLink.clickEvent["deep_link_sub1"] as? String
+                if let deepLinkValue = deepLinkValue {
+                    UserDefaults.standard.set(deepLinkValue, forKey: "deep_link_value")
+                }
+                if let deepLinkSub1 = deepLinkSub1 {
+                    UserDefaults.standard.set(deepLinkSub1, forKey: "deep_link_sub1")
+                }
+            }
+        case .notFound:
+            print("not foundas")
+        case .failure:
+            print("Ошибка при обработке Deep Link: \(result.error?.localizedDescription ?? "Unknown error")")
+        }
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        AppsFlyerLib.shared().continue(userActivity, restorationHandler: nil)
+        return true
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        AppsFlyerLib.shared().handleOpen(url, options: options)
+        return true
     }
 }
 
