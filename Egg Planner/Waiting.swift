@@ -49,6 +49,8 @@ struct LoadingView: View {
                             Spacer()
                             
                             ProgressView()
+                                .scaleEffect(2.0)
+                                .padding(.top)
                             
                             Spacer()
                         }
@@ -72,8 +74,9 @@ struct LoadingView: View {
                             .padding(.horizontal, 40)
                         
                         ProgressView()
+                            .scaleEffect(2.0)
                     }
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 20)
                 }
             }
         }
@@ -277,13 +280,13 @@ extension LoadingView {
         conversionData["store_id"] = "6754699349"
         conversionData["locale"] = Locale.current.identifier
         conversionData["firebase_project_id"] = "593944836209"
-        if let deepLinkValue = UserDefaults.standard.string(forKey: "deep_link_value") {
-            conversionData["deep_link_value"] = deepLinkValue
-        }
-        if let deepLinkSub1 = UserDefaults.standard.string(forKey: "deep_link_sub1") {
-            conversionData["deep_link_sub1"] = deepLinkSub1
-        }
-        
+//        if let deepLinkValue = UserDefaults.standard.string(forKey: "deep_link_value") {
+//            conversionData["deep_link_value"] = deepLinkValue
+//        }
+//        if let deepLinkSub1 = UserDefaults.standard.string(forKey: "deep_link_sub1") {
+//            conversionData["deep_link_sub1"] = deepLinkSub1
+//        }
+
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: conversionData, options: [])
                     let url = URL(string: "https://nestpllan.com/config.php")!

@@ -13,6 +13,7 @@ struct Egg_PlannerApp: App {
     var body: some Scene {
         WindowGroup {
             LoadingView()
+                .preferredColorScheme(.light)
         }
     }
 }

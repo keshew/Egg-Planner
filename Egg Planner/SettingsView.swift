@@ -3,7 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("notifyCollectEggs") private var notifyCollectEggs = true
     @AppStorage("notifyCheckShelfLife") private var notifyCheckShelfLife = true
-    
+    let privacyPolicyURL = URL(string: "https://www.freeprivacypolicy.com/live/a81db796-8d66-45e4-9021-772379c82315")!
     var body: some View {
         ZStack {
             Color(hex: "#FFF8E6").ignoresSafeArea()
@@ -17,23 +17,20 @@ struct SettingsView: View {
                     
                     Toggle("Reminder: Collect Eggs", isOn: $notifyCollectEggs)
                         .padding(.horizontal)
-                        .onChange(of: notifyCollectEggs) { enabled in
-                            if enabled {
-//                                scheduleCollectReminder()
-                            } else {
-//                                removeCollectReminder()
-                            }
-                        }
                     
                     Toggle("Reminder: Check Shelf Life", isOn: $notifyCheckShelfLife)
                         .padding(.horizontal)
-                        .onChange(of: notifyCheckShelfLife) { enabled in
-                            if enabled {
-//                                scheduleShelfLifeReminder()
-                            } else {
-//                                removeShelfLifeReminder()
-                            }
-                        }
+                    
+                    Button(action: {
+                                  if UIApplication.shared.canOpenURL(privacyPolicyURL) {
+                                      UIApplication.shared.open(privacyPolicyURL)
+                                  }
+                              }) {
+                                  Text("Privacy Policy")
+                                      .foregroundColor(.blue)
+                                      .underline()
+                                      .padding(.horizontal)
+                              }
                 }
                 
                 Spacer()
@@ -41,50 +38,5 @@ struct SettingsView: View {
             .padding(.top, 40)
         }
         .navigationTitle("Settings")
-        .onAppear {
-//            requestNotificationAuthorization()
-        }
     }
-//    
-//    private func requestNotificationAuthorization() {
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
-//    }
-//    
-//    private func scheduleCollectReminder() {
-//        let content = UNMutableNotificationContent()
-//        content.title = "Collect Eggs"
-//        content.body = "It's time to collect your eggs today!"
-//        content.sound = .default
-//        
-//        var dateComponents = DateComponents()
-//        dateComponents.hour = 9
-//        
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-//        
-//        let request = UNNotificationRequest(identifier: "collectEggsReminder", content: content, trigger: trigger)
-//        UNUserNotificationCenter.current().add(request)
-//    }
-//    
-//    private func removeCollectReminder() {
-//        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["collectEggsReminder"])
-//    }
-//    
-//    private func scheduleShelfLifeReminder() {
-//        let content = UNMutableNotificationContent()
-//        content.title = "Check Egg Shelf Life"
-//        content.body = "Check if any egg batches are close to expiring."
-//        content.sound = .default
-//        
-//        var dateComponents = DateComponents()
-//        dateComponents.hour = 18
-//        
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-//        
-//        let request = UNNotificationRequest(identifier: "checkShelfLifeReminder", content: content, trigger: trigger)
-//        UNUserNotificationCenter.current().add(request)
-//    }
-//    
-//    private func removeShelfLifeReminder() {
-//        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["checkShelfLifeReminder"])
-//    }
 }

@@ -38,7 +38,7 @@ struct PlannerHomeView: View {
                     CircularFreshnessView(progress: viewModel.freshnessPercentage())
                         .frame(height: 250)
                     
-                    NavigationLink(destination: AddBatchView()) {
+                    NavigationLink(destination: AddBatchView().environmentObject(viewModel)) {
                         PlannerTile(icon: "plus.circle.fill", title: "Add Batch", color: Color(hex: "#F4B400"))
                             .padding(.horizontal)
                     }
