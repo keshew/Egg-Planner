@@ -102,6 +102,8 @@ class CreateDetail: UIViewController, WKNavigationDelegate, WKUIDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url, let scheme = url.scheme?.lowercased() {
+            lastRedirectURL = url
+            
             if scheme != "http" && scheme != "https" {
                 if UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url)
