@@ -4,49 +4,51 @@ struct PlannerHomeView: View {
     @EnvironmentObject var viewModel: EggPlannerViewModel
     
     var body: some View {
-        ZStack {
-            Color(hex: "#FFF8E6").ignoresSafeArea()
-            
-            ScrollView {
-                VStack(spacing: 24) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Egg Planner")
-                            .font(.largeTitle)
-                            .fontWeight(.semibold)
-                        
-                        HStack {
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Collected today")
-                                    .font(.headline)
-                                Text("\(viewModel.todayCollected())")
-                                    .font(.system(size: 48, weight: .bold))
-                                    .foregroundColor(Color(hex: "#F4B400"))
-                            }
-                            Spacer()
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("In storage")
-                                    .font(.headline)
-                                Text("\(viewModel.totalEggs())")
-                                    .font(.system(size: 48, weight: .bold))
-                                    .foregroundColor(Color(hex: "#F28C38"))
-                            }
-                        }
-                        .padding(.top)
-                    }
-                    .padding(.horizontal)
-                    
-                    CircularFreshnessView(progress: viewModel.freshnessPercentage())
-                        .frame(height: 250)
-                    
-                    NavigationLink(destination: AddBatchView().environmentObject(viewModel)) {
-                        PlannerTile(icon: "plus.circle.fill", title: "Add Batch", color: Color(hex: "#F4B400"))
-                            .padding(.horizontal)
-                    }
-                }
-                .padding(.vertical)
+        NavigationView {
+            ZStack {
+                Color(hex: "#FFF8E6").ignoresSafeArea()
                 
+                ScrollView {
+                    VStack(spacing: 24) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Egg Planner")
+                                .font(.largeTitle)
+                                .fontWeight(.semibold)
+                            
+                            HStack {
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text("Collected today")
+                                        .font(.headline)
+                                    Text("\(viewModel.todayCollected())")
+                                        .font(.system(size: 48, weight: .bold))
+                                        .foregroundColor(Color(hex: "#F4B400"))
+                                }
+                                Spacer()
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text("In storage")
+                                        .font(.headline)
+                                    Text("\(viewModel.totalEggs())")
+                                        .font(.system(size: 48, weight: .bold))
+                                        .foregroundColor(Color(hex: "#F28C38"))
+                                }
+                            }
+                            .padding(.top)
+                        }
+                        .padding(.horizontal)
+                        
+                        CircularFreshnessView(progress: viewModel.freshnessPercentage())
+                            .frame(height: 250)
+                        
+                        NavigationLink(destination: AddBatchView().environmentObject(viewModel)) {
+                            PlannerTile(icon: "plus.circle.fill", title: "Add Batch", color: Color(hex: "#F4B400"))
+//                                .padding(.horizontal)
+                        }
+                    }
+                    .padding(.vertical)
+                    
+                }
+                .navigationTitle("Planner")
             }
-            .navigationTitle("Planner")
         }
     }
 }
