@@ -35,7 +35,7 @@ class CreateDetail: UIViewController, WKNavigationDelegate, WKUIDelegate {
                 let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
                 webConfiguration.userContentController.addUserScript(script)
                 
-                self.czxasd = WKWebView(frame: self.view.frame, configuration: webConfiguration)
+                self.czxasd = WKWebView(frame: .zero, configuration: webConfiguration)
                 self.czxasd.customUserAgent = asdqw
                 self.czxasd.navigationDelegate = self
                 self.czxasd.uiDelegate = self
@@ -46,14 +46,14 @@ class CreateDetail: UIViewController, WKNavigationDelegate, WKUIDelegate {
                 self.czxasd.scrollView.minimumZoomScale = 1.0
                 self.czxasd.scrollView.maximumZoomScale = 1.0
                 self.czxasd.allowsBackForwardNavigationGestures = true
-                
+                view.backgroundColor = .black
                 self.view.addSubview(self.czxasd)
                 self.czxasd.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
-                    self.czxasd.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-                    self.czxasd.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-                    self.czxasd.topAnchor.constraint(equalTo: self.view.topAnchor),
-                    self.czxasd.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+                    self.czxasd.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+                    self.czxasd.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+                    self.czxasd.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+                    self.czxasd.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
                 ])
                 
                 self.loadInfo(with: url)
@@ -108,18 +108,14 @@ class CreateDetail: UIViewController, WKNavigationDelegate, WKUIDelegate {
                 return
             } else if status == 200 {
                 if webView.superview == nil {
-                    let whiteBG = UIView(frame: view.frame)
-                    whiteBG.backgroundColor = .black
-                    whiteBG.tag = 11
-                    view.addSubview(whiteBG)
                     view.addSubview(webView)
                     
                     webView.translatesAutoresizingMaskIntoConstraints = false
                     NSLayoutConstraint.activate([
-                        webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                        webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                        webView.topAnchor.constraint(equalTo: view.topAnchor),
-                        webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+                        webView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                        webView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+                        webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                        webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
                     ])
                 }
                 decisionHandler(.allow)

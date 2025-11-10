@@ -88,7 +88,6 @@ struct LoadingView: View {
         }
         .fullScreenCover(item: $url) { item in
             Egg(urlString: item.urlString)
-                .ignoresSafeArea(.keyboard)
                 .onReceive(NotificationCenter.default.publisher(for: .openUrlFromNotification)) { notification in
                     if let userInfo = notification.userInfo,
                        let url = userInfo["url"] as? String {
@@ -101,9 +100,12 @@ struct LoadingView: View {
                 )) {
                     if let urlToOpen = urlFromNotification {
                         Egg(urlString: urlToOpen)
+                            .ignoresSafeArea()
                     } else {
                     }
                 }
+                .ignoresSafeArea(.keyboard)
+                .ignoresSafeArea()
         }
         .onReceive(NotificationCenter.default.publisher(for: .openUrlFromNotification)) { notification in
             if let userInfo = notification.userInfo,
@@ -117,6 +119,7 @@ struct LoadingView: View {
         )) {
             if let urlToOpen = urlFromNotification {
                 Egg(urlString: urlToOpen)
+                    .ignoresSafeArea()
             } else {
             }
         }
