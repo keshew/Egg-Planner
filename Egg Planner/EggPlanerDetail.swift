@@ -79,26 +79,6 @@ class CreateDetail: UIViewController, WKNavigationDelegate, WKUIDelegate {
         }
     }
     
-//    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
-//                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-//        if let url = navigationAction.request.url {
-//            lastRedirectURL = url
-//            
-//            let deepLinkSchemes = ["paytmmp", "phonepe", "bankid"]
-//            if let scheme = url.scheme?.lowercased(), deepLinkSchemes.contains(scheme) {
-//                if UIApplication.shared.canOpenURL(url) {
-//                    UIApplication.shared.open(url)
-//                    if webView.canGoBack {
-//                        webView.goBack()
-//                    }
-//                }
-//                decisionHandler(.cancel)
-//                return
-//            }
-//        }
-//        decisionHandler(.allow)
-//    }
-    
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url, let scheme = url.scheme?.lowercased() {
@@ -129,6 +109,7 @@ class CreateDetail: UIViewController, WKNavigationDelegate, WKUIDelegate {
             } else if status == 200 {
                 if webView.superview == nil {
                     let whiteBG = UIView(frame: view.frame)
+                    whiteBG.backgroundColor = .black
                     whiteBG.tag = 11
                     view.addSubview(whiteBG)
                     view.addSubview(webView)
