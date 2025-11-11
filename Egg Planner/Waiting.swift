@@ -283,12 +283,6 @@ extension LoadingView {
         conversionData["store_id"] = "6754699349"
         conversionData["locale"] = Locale.current.identifier
         conversionData["firebase_project_id"] = "593944836209"
-//        if let deepLinkValue = UserDefaults.standard.string(forKey: "deep_link_value") {
-//            conversionData["deep_link_value"] = deepLinkValue
-//        }
-//        if let deepLinkSub1 = UserDefaults.standard.string(forKey: "deep_link_sub1") {
-//            conversionData["deep_link_sub1"] = deepLinkSub1
-//        }
 
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: conversionData, options: [])

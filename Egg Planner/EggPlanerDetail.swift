@@ -90,9 +90,10 @@ class CreateDetail: UIViewController, WKNavigationDelegate, WKUIDelegate {
                     if webView.canGoBack {
                         webView.goBack()
                     }
+                    
+                    decisionHandler(.cancel)
+                    return
                 }
-                decisionHandler(.cancel)
-                return
             }
         }
         decisionHandler(.allow)
